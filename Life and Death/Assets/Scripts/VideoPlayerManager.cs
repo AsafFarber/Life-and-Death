@@ -15,7 +15,6 @@ public class VideoPlayerManager : MonoBehaviour
 
     public void Play(VideoClip clip)
     {
-        Debug.Log("Play");
         videoPlayer.clip = clip;
         videoPlayer.Play();
         rawImage.enabled = true;
@@ -27,6 +26,6 @@ public class VideoPlayerManager : MonoBehaviour
         videoPlayer.frame = 0;
         rawImage.enabled = false;
         input.enabled = false;
-        videoPlayer.Stop();
+        videoPlayer.Pause();
     }
 }
