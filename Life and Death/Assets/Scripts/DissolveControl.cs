@@ -20,7 +20,7 @@ public class DissolveControl : MonoBehaviour
     public void Initialize()
     {
         currentLevel = 0;
-        StartCoroutine(LerpDissloveAmount(levels[0]));
+        StartCoroutine(LerpDissloveAmount(levels[0], 0));
     }
     public void LoadLevel(int level)
     {
@@ -33,7 +33,7 @@ public class DissolveControl : MonoBehaviour
     {
         if (!loaded)
         {
-            StartCoroutine(LerpDissloveAmount(levels[currentLevel]));
+            StartCoroutine(LerpDissloveAmount(levels[currentLevel] , 1));
             loaded = true;
         }
     }
@@ -42,9 +42,9 @@ public class DissolveControl : MonoBehaviour
     //    //yield return new WaitForSeconds(1);
     //}
 
-    private IEnumerator LerpDissloveAmount(float targetValue)
+    private IEnumerator LerpDissloveAmount(float targetValue,  float delay)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(delay);
 
         float startValue = dissolveMat.GetFloat("_Disslove_Amount");
         float elapsedTime = 0f;

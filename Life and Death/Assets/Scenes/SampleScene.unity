@@ -2412,7 +2412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470867bc2ccc79b4296e6582bd06e9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -1
+  speed: -2
 --- !u!1001 &1590623925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2679,7 +2679,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1666045888
 MonoBehaviour:
@@ -3490,7 +3490,7 @@ GameObject:
   - component: {fileID: 2137203887}
   - component: {fileID: 2137203885}
   m_Layer: 0
-  m_Name: Net
+  m_Name: Net Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
