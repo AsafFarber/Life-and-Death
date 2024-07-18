@@ -4,20 +4,23 @@ using UnityEngine;
 using UnityEngine.Events;
 public class DissolveControl : MonoBehaviour
 {
+    [SerializeField] private float intiialValue = -1;
+
     [SerializeField] private Material dissolveMat;
     [SerializeField] private float lerpDuration = 1.0f;
     [SerializeField] private float[] levels = { 0, 0.8f, 1.8f};
     [SerializeField] private UnityEvent[] levelEvents;
 
     private bool loaded = true;
-    private int currentLevel = 0;
+    private int currentLevel = -1;
     private void Start()
     {
-        dissolveMat.SetFloat("_Disslove_Amount", -1f);
+        dissolveMat.SetFloat("_Disslove_Amount", intiialValue);
     }
     public void Initialize()
     {
-        StartCoroutine(LoadNet());
+        currentLevel = 0;
+        StartCoroutine(LerpDissloveAmount(levels[0]));
     }
     public void LoadLevel(int level)
     {
@@ -34,11 +37,10 @@ public class DissolveControl : MonoBehaviour
             loaded = true;
         }
     }
-    IEnumerator LoadNet()
-    {
-        yield return new WaitForSeconds(1);
-        StartCoroutine(LerpDissloveAmount(levels[0]));
-    }
+    //IEnumerator LoadNet()
+    //{
+    //    //yield return new WaitForSeconds(1);
+    //}
 
     private IEnumerator LerpDissloveAmount(float targetValue)
     {
@@ -57,6 +59,6 @@ public class DissolveControl : MonoBehaviour
         }
 
         dissolveMat.SetFloat("_Disslove_Amount", targetValue);
-        levelEvents[currentLevel].Invoke();
+        levelEvents[currentLevel]?.Invoke();
     }
 }
