@@ -32,7 +32,6 @@ public class SimpleBlur : MonoBehaviour
         }
 
         blurMaterial.SetFloat("_BlurSpread", blurSpread);
-        Debug.Log("Blur Spread: " + blurSpread);
 
         int rtW = source.width / 4;
         int rtH = source.height / 4;
