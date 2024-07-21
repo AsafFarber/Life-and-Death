@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1970454694122824751
+--- !u!114 &-5357985240232471281
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18,25 +18,25 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 1
+    value: 191.5
   threshold:
     overrideState: 0
-    value: 0
+    value: 1
   softKnee:
-    overrideState: 0
-    value: 0.5
+    overrideState: 1
+    value: 1
   clamp:
     overrideState: 0
-    value: 65472
+    value: 792.07
   diffusion:
-    overrideState: 0
-    value: 7
+    overrideState: 1
+    value: 3.9
   anamorphicRatio:
-    overrideState: 0
+    overrideState: 1
     value: 0
   color:
-    overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    overrideState: 1
+    value: {r: 0.00073334307, g: 0.00073334307, b: 0.00073334307, a: 1}
   fastMode:
     overrideState: 0
     value: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: PP Profile - BIR
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: -1970454694122824751}
+  - {fileID: -5357985240232471281}
   - {fileID: 8644226821639261401}
 --- !u!114 &8644226821639261401
 MonoBehaviour:
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb84e30e02715445aeb9959894e3b4d, type: 3}
   m_Name: ColorGrading
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1

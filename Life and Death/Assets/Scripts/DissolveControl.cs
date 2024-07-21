@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class DissolveControl : MonoBehaviour
 {
     [SerializeField] private float intiialValue = -1;
+    [SerializeField] private bool initializeOnStart;
 
     [SerializeField] private Material dissolveMat;
     [SerializeField] private float lerpDuration = 1.0f;
@@ -16,6 +17,8 @@ public class DissolveControl : MonoBehaviour
     private void Start()
     {
         dissolveMat.SetFloat("_Disslove_Amount", intiialValue);
+        if (initializeOnStart)
+            Initialize();
     }
     public void Initialize()
     {
