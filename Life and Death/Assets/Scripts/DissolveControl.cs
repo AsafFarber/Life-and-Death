@@ -10,7 +10,8 @@ public class DissolveControl : MonoBehaviour
     [SerializeField] private Material dissolveMat;
     [SerializeField] private float lerpDuration = 1.0f;
     [SerializeField] private float[] levels = { 0, 0.8f, 1.8f};
-    [SerializeField] private UnityEvent[] levelEvents;
+    [SerializeField] private UnityEvent<int> onLoadLevel;
+    [SerializeField] private UnityEvent[] onLevelLoaded;
 
     private bool loaded = true;
     private int currentLevel = -1;
@@ -49,6 +50,7 @@ public class DissolveControl : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
+        onLoadLevel.Invoke(currentLevel);
         float startValue = dissolveMat.GetFloat("_Disslove_Amount");
         float elapsedTime = 0f;
 
@@ -62,6 +64,6 @@ public class DissolveControl : MonoBehaviour
         }
 
         dissolveMat.SetFloat("_Disslove_Amount", targetValue);
-        levelEvents[currentLevel]?.Invoke();
+        onLevelLoaded[currentLevel]?.Invoke();
     }
 }
