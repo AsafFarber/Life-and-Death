@@ -2960,7 +2960,7 @@ MonoBehaviour:
   - {fileID: 1443048804}
   zoomSpeed: 0.0005
   minZoom: 1
-  maxZoom: 5.5
+  maxZoom: 6
 --- !u!1001 &1814279579
 PrefabInstance:
   m_ObjectHideFlags: 0
