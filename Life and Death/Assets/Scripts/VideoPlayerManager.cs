@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
-using DG.Tweening;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
