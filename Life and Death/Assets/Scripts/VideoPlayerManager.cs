@@ -15,7 +15,12 @@ public class VideoPlayerManager : MonoBehaviour
     [SerializeField] private PlayerInput input;
     [SerializeField] private UnityEvent OnPlay;
     [SerializeField] private UnityEvent OnStop;
+    private AudioSource audioSource;
 
+    private void Start()
+    {
+        audioSource = videoPlayer.GetComponent<AudioSource>();
+    }
     public void Play(VideoClip clip)
     {
         videoPlayer.clip = clip;
@@ -23,6 +28,7 @@ public class VideoPlayerManager : MonoBehaviour
         rawImage.enabled = true;
         count.CountUp(0);
         input.enabled = true;
+        videoPlayer.SetTargetAudioSource(0, audioSource);
         OnPlay.Invoke();
     }
     public void Stop()
