@@ -5,6 +5,7 @@ using UnityEngine.Video;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class VideoPlayerManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class VideoPlayerManager : MonoBehaviour
     [SerializeField] private RawImage rawImage;
     [SerializeField] private Count count;
     [SerializeField] private PlayerInput input;
+    [SerializeField] private UnityEvent OnPlay;
+    [SerializeField] private UnityEvent OnStop;
 
     public void Play(VideoClip clip)
     {
@@ -20,6 +23,7 @@ public class VideoPlayerManager : MonoBehaviour
         rawImage.enabled = true;
         count.CountUp(0);
         input.enabled = true;
+        OnPlay.Invoke();
     }
     public void Stop()
     {
@@ -27,5 +31,6 @@ public class VideoPlayerManager : MonoBehaviour
         rawImage.enabled = false;
         input.enabled = false;
         videoPlayer.Pause();
+        OnStop.Invoke();
     }
 }
