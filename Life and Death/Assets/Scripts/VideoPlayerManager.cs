@@ -22,13 +22,14 @@ public class VideoPlayerManager : MonoBehaviour
     }
     public void Play(VideoClip clip)
     {
+        if(videoPlayer.clip == clip)
+        {
+            ShowVideo();
+            return;
+        }
         videoPlayer.clip = clip;
-        videoPlayer.Play();
-        rawImage.enabled = true;
-        count.CountUp(0);
-        input.enabled = true;
-        videoPlayer.SetTargetAudioSource(0, audioSource);
-        OnPlay.Invoke();
+        videoPlayer.Prepare();
+        videoPlayer.prepareCompleted += OnVideoPrepared;
     }
     public void Stop()
     {
@@ -37,5 +38,19 @@ public class VideoPlayerManager : MonoBehaviour
         input.enabled = false;
         videoPlayer.Pause();
         OnStop.Invoke();
+    }
+    private void OnVideoPrepared(VideoPlayer vp)
+    {
+        videoPlayer.prepareCompleted -= OnVideoPrepared;
+        ShowVideo();
+    }
+    private void ShowVideo()
+    {
+        videoPlayer.Play();
+        rawImage.enabled = true;
+        count.CountUp(0);
+        input.enabled = true;
+        videoPlayer.SetTargetAudioSource(0, audioSource);
+        OnPlay.Invoke();
     }
 }
