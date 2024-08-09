@@ -53,7 +53,7 @@ public class VideoPlayerManager : MonoBehaviour
         rawImage.enabled = true;
         count.CountUp(0);
         videoPlayer.SetTargetAudioSource(0, audioSource);
-        if(dissolveControl.GetLastVideoLevel() > 1)
+        if (dissolveControl.GetLastVideoLevel() > 1)
             OnPlay.Invoke();
     }
 }

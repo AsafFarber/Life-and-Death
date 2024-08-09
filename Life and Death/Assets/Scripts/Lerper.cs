@@ -9,14 +9,22 @@ public class Lerper : MonoBehaviour
     [SerializeField] UnityEvent<float> OnLerpValueChange;
     private float lerpValue = 0;
     private float timer = 0;
+    private IEnumerator lerpCoroutine;
+    private void Start()
+    {
+        lerpCoroutine = DoLerp(0, 0, lerpInDuration);
+    }
     public void ZeroToValue(float value)
     {
-        StartCoroutine(DoLerp(0, value, lerpInDuration));
-
+        StopCoroutine(lerpCoroutine);
+        lerpCoroutine = DoLerp(0, value, lerpInDuration);
+        StartCoroutine(lerpCoroutine);
     }
     public void ValueToZero(float value)
     {
-        StartCoroutine(DoLerp(value, 0, lerpOutDuration));
+        StopCoroutine(lerpCoroutine);
+        lerpCoroutine = DoLerp(value, 0, lerpOutDuration);
+        StartCoroutine(lerpCoroutine);
     }
     private IEnumerator DoLerp(float startValue, float endValue, float lerpDuration)
     {
