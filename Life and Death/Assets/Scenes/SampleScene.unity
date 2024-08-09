@@ -787,7 +787,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d69bb3201c620a4cae30156875fe4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpDuration: 1
+  lerpInDuration: 1
+  lerpOutDuration: 1.5
   OnLerpValueChange:
     m_PersistentCalls:
       m_Calls:
@@ -2058,7 +2059,7 @@ GameObject:
   - component: {fileID: 1207565728}
   - component: {fileID: 1207565730}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Background Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2187,7 +2188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d69bb3201c620a4cae30156875fe4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpDuration: 1
+  lerpInDuration: 1.5
+  lerpOutDuration: 1
   OnLerpValueChange:
     m_PersistentCalls:
       m_Calls:
