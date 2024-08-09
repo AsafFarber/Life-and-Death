@@ -17,7 +17,7 @@ public class DissolveControl : MonoBehaviour
     private int lastVideoLevel = 0;
 
     public int GetCurrentLevel() => currentLevel;
-    public int GetLastVideoLevel() => currentLevel;
+    public int GetLastVideoLevel() => lastVideoLevel;
 
 
     private void Start()

@@ -11,6 +11,8 @@ public class Count : MonoBehaviour
     [SerializeField] private UnityEvent OnOne;
     [SerializeField] private UnityEvent OnZero;
     [SerializeField] private UnityEvent<float> OnCountDown;
+    [SerializeField] private UnityEvent OnCountUp;
+
 
     private float counter = 1;
     private float addAmount;
@@ -24,6 +26,7 @@ public class Count : MonoBehaviour
     public void CountUp(float delay)
     {
         if (this.enabled == true) return;
+        OnCountUp.Invoke();
         StartCoroutine(CountUpWithDelay(delay));
     }
     IEnumerator CountUpWithDelay(float delay)

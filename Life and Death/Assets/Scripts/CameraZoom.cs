@@ -7,7 +7,7 @@ public class CameraZoom : MonoBehaviour
     [SerializeField] private float zoomSpeed = 1f; // Speed of zooming
     [SerializeField] private float minZoom = 2f; // Minimum orthographic size
     [SerializeField] private float maxZoom = 10f; // Maximum orthographic size
-    [SerializeField] private CameraDrag cameraDrag;
+    [SerializeField] private PlayerInput playerInput;
 
     public void SetZoom(float level)
     {
@@ -15,20 +15,19 @@ public class CameraZoom : MonoBehaviour
         {
             SetCamerasZoom(4);
         }
-        if (level == 2)
+        if (level == 2 && cameras[0].orthographicSize != 6)
         {
             SetCamerasZoom(6);
         }
+        playerInput.enabled = true;
     }
     private void SetCamerasZoom(float zoomAmount)
     {
-        cameraDrag.enabled = false;
-
         foreach (Camera cam in cameras)
+        {
             cam.orthographicSize = zoomAmount;
-
-        cameraDrag.enabled = true;
-
+        }
+        cameras[0].transform.position = Vector3.zero;
     }
     public void OnZoom(InputAction.CallbackContext context)
     {
