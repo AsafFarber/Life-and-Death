@@ -52,7 +52,6 @@ public class VideoPlayerManager : MonoBehaviour
         videoPlayer.Play();
         rawImage.enabled = true;
         count.CountUp(0);
-        input.enabled = true;
         videoPlayer.SetTargetAudioSource(0, audioSource);
         if(dissolveControl.GetCurrentLevel() > 1)
             OnPlay.Invoke();

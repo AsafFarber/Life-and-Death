@@ -8,6 +8,7 @@ public class Count : MonoBehaviour
 
     [SerializeField] private UnityEvent<Color> OnCount;
     [SerializeField] private UnityEvent<float> OnCountF;
+    [SerializeField] private UnityEvent OnOne;
     [SerializeField] private UnityEvent OnZero;
     [SerializeField] private UnityEvent<float> OnCountDown;
 
@@ -54,6 +55,7 @@ public class Count : MonoBehaviour
         }
         if (counter > 1)
         {
+            OnOne.Invoke();
             this.enabled = false;
         }
     }
