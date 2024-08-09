@@ -22,8 +22,8 @@ public class CameraDrag : MonoBehaviour
     {
         if (!_isDragging) return;
 
-        _difference = GetMousePosition - transform.position;
-        transform.position = _origin - _difference;
+        _difference = GetMousePosition - MainCam.transform.position;
+        MainCam.transform.position = _origin - _difference;
     }
 
     private Vector3 GetMousePosition => MainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
