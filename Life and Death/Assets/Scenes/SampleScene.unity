@@ -3191,7 +3191,7 @@ MonoBehaviour:
   lerpDuration: 2.3
   levels:
   - 0.7
-  - 0.2
+  - 0.135
   - -0.5
   onLevelLoaded:
   - m_PersistentCalls:
@@ -3682,7 +3682,7 @@ MonoBehaviour:
   lerpDuration: 2.3
   levels:
   - 0.7
-  - 0.2
+  - 0.135
   - -0.5
   onLevelLoaded:
   - m_PersistentCalls:
