@@ -12,8 +12,10 @@ public class VideoPlayerManager : MonoBehaviour
     [SerializeField] private RawImage rawImage;
     [SerializeField] private Count count;
     [SerializeField] private PlayerInput input;
-    [SerializeField] private UnityEvent OnPlay;
-    [SerializeField] private UnityEvent OnStop;
+    [SerializeField] private DissolveControl dissolveControl;
+
+    [SerializeField] private UnityEvent OnPlay; // lerp sound fade in/out
+    [SerializeField] private UnityEvent OnStop; // lerp sound fade in/out
     private AudioSource audioSource;
 
     private void Start()
@@ -37,7 +39,8 @@ public class VideoPlayerManager : MonoBehaviour
         rawImage.enabled = false;
         input.enabled = false;
         videoPlayer.Pause();
-        OnStop.Invoke();
+        if (dissolveControl.GetCurrentLevel() > 1)
+            OnStop.Invoke();
     }
     private void OnVideoPrepared(VideoPlayer vp)
     {
@@ -51,6 +54,7 @@ public class VideoPlayerManager : MonoBehaviour
         count.CountUp(0);
         input.enabled = true;
         videoPlayer.SetTargetAudioSource(0, audioSource);
-        OnPlay.Invoke();
+        if(dissolveControl.GetCurrentLevel() > 1)
+            OnPlay.Invoke();
     }
 }

@@ -14,6 +14,8 @@ public class DissolveControl : MonoBehaviour
 
     private bool loaded = true;
     private int currentLevel = -1;
+    public int GetCurrentLevel() => currentLevel;
+
     private void Start()
     {
         dissolveMat.SetFloat("_Disslove_Amount", intiialValue);
