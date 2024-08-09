@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.Events;
 public class Count : MonoBehaviour
 {
+    [SerializeField] private DissolveControl dissolveControl;
 
     [SerializeField] private UnityEvent<Color> OnCount;
     [SerializeField] private UnityEvent<float> OnCountF;
     [SerializeField] private UnityEvent OnZero;
-    [SerializeField] private UnityEvent OnOne;
+    [SerializeField] private UnityEvent<float> OnOne;
 
     private float counter = 1;
     private float addAmount;
@@ -52,7 +53,7 @@ public class Count : MonoBehaviour
         }
         if (counter > 1)
         {
-            OnOne.Invoke();
+            OnOne.Invoke(dissolveControl.GetCurrentLevel());
             this.enabled = false;
         }
     }

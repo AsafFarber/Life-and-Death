@@ -579,6 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161e8bb8a91ad604ba3a0b2cf9e9ff2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dissolveControl: {fileID: 2137203885}
   OnCount:
     m_PersistentCalls:
       m_Calls:
@@ -614,7 +615,19 @@ MonoBehaviour:
         m_CallState: 2
   OnOne:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1763791187}
+        m_TargetAssemblyTypeName: CameraZoom, Assembly-CSharp
+        m_MethodName: SetZoom
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!328 &214991700
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -879,7 +892,7 @@ Camera:
   far clip plane: 200
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1691,6 +1704,7 @@ MonoBehaviour:
   rawImage: {fileID: 214991695}
   count: {fileID: 214991699}
   input: {fileID: 214991698}
+  dissolveControl: {fileID: 2137203885}
   OnPlay:
     m_PersistentCalls:
       m_Calls:
@@ -2568,7 +2582,7 @@ Camera:
   far clip plane: 200
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 2
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2

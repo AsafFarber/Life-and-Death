@@ -157,7 +157,7 @@ Material:
     - _Cutoff: 0.4
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Disslove_Amount: 0.9894996
+    - _Disslove_Amount: -0.5
     - _Dissovle_Scale: 50
     - _DstBlend: 0
     - _EmissionExtraIntensity: 1.06
