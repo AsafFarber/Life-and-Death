@@ -9,7 +9,7 @@ public class Count : MonoBehaviour
     [SerializeField] private UnityEvent<Color> OnCount;
     [SerializeField] private UnityEvent<float> OnCountF;
     [SerializeField] private UnityEvent OnZero;
-    [SerializeField] private UnityEvent<float> OnOne;
+    [SerializeField] private UnityEvent<float> OnCountDown;
 
     private float counter = 1;
     private float addAmount;
@@ -18,6 +18,7 @@ public class Count : MonoBehaviour
     {
         if (this.enabled == true) return;
         StartCoroutine(CountDownWithDelay(delay));
+        OnCountDown.Invoke(dissolveControl.GetCurrentLevel());
     }
     public void CountUp(float delay)
     {
@@ -53,7 +54,6 @@ public class Count : MonoBehaviour
         }
         if (counter > 1)
         {
-            OnOne.Invoke(dissolveControl.GetCurrentLevel());
             this.enabled = false;
         }
     }

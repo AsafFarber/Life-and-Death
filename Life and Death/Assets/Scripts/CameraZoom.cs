@@ -7,19 +7,28 @@ public class CameraZoom : MonoBehaviour
     [SerializeField] private float zoomSpeed = 1f; // Speed of zooming
     [SerializeField] private float minZoom = 2f; // Minimum orthographic size
     [SerializeField] private float maxZoom = 10f; // Maximum orthographic size
+    [SerializeField] private CameraDrag cameraDrag;
+
     public void SetZoom(float level)
     {
-        Debug.Log(level);
         if(level == 1)
         {
-            foreach (Camera cam in cameras)
-                cam.orthographicSize = 4;
+            SetCamerasZoom(4);
         }
         if (level == 2)
         {
-            foreach (Camera cam in cameras)
-                cam.orthographicSize = 6;
+            SetCamerasZoom(6);
         }
+    }
+    private void SetCamerasZoom(float zoomAmount)
+    {
+        cameraDrag.enabled = false;
+
+        foreach (Camera cam in cameras)
+            cam.orthographicSize = zoomAmount;
+
+        cameraDrag.enabled = true;
+
     }
     public void OnZoom(InputAction.CallbackContext context)
     {
