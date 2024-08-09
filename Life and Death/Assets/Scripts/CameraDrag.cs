@@ -3,20 +3,13 @@ using UnityEngine.InputSystem;
 
 public class CameraDrag : MonoBehaviour
 {
-    #region Variables
-
+    [SerializeField] private Camera MainCam;
     private Vector3 _origin;
     private Vector3 _difference;
-
-    private Camera _mainCamera;
-
     private bool _isDragging;
-
-    #endregion
-
     private void Awake()
     {
-        _mainCamera = Camera.main;
+        MainCam = Camera.main;
     }
 
     public void OnDrag(InputAction.CallbackContext ctx)
@@ -33,5 +26,5 @@ public class CameraDrag : MonoBehaviour
         transform.position = _origin - _difference;
     }
 
-    private Vector3 GetMousePosition => _mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+    private Vector3 GetMousePosition => MainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 }

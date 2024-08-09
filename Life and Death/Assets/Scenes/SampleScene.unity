@@ -2892,7 +2892,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1763791188}
         m_TargetAssemblyTypeName: CameraDrag, Assembly-CSharp
         m_MethodName: OnDrag
         m_Mode: 0
@@ -2993,6 +2993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2c24359477f1de468671f090e261637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCam: {fileID: 519420031}
 --- !u!1001 &1814279579
 PrefabInstance:
   m_ObjectHideFlags: 0

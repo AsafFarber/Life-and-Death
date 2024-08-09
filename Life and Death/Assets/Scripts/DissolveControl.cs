@@ -14,7 +14,11 @@ public class DissolveControl : MonoBehaviour
 
     private bool loaded = true;
     private int currentLevel = -1;
+    private int lastVideoLevel = 0;
+
     public int GetCurrentLevel() => currentLevel;
+    public int GetLastVideoLevel() => currentLevel;
+
 
     private void Start()
     {
@@ -29,6 +33,8 @@ public class DissolveControl : MonoBehaviour
     }
     public void LoadLevel(int level)
     {
+        lastVideoLevel = level;
+
         if (currentLevel >= level) return;
 
         currentLevel = level;

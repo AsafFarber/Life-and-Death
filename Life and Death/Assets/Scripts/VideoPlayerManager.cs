@@ -39,7 +39,7 @@ public class VideoPlayerManager : MonoBehaviour
         rawImage.enabled = false;
         input.enabled = false;
         videoPlayer.Pause();
-        if (dissolveControl.GetCurrentLevel() > 1)
+        if (dissolveControl.GetLastVideoLevel() > 1)
             OnStop.Invoke();
     }
     private void OnVideoPrepared(VideoPlayer vp)
@@ -53,7 +53,7 @@ public class VideoPlayerManager : MonoBehaviour
         rawImage.enabled = true;
         count.CountUp(0);
         videoPlayer.SetTargetAudioSource(0, audioSource);
-        if(dissolveControl.GetCurrentLevel() > 1)
+        if(dissolveControl.GetLastVideoLevel() > 1)
             OnPlay.Invoke();
     }
 }
